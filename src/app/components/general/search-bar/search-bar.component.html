@@ -1,0 +1,22 @@
+<div class="flex flex-row items-center gap-2 border border-gray-300 rounded-xl p-1">
+  <button matIconButton (click)="sendSearchInputValue()">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <input
+    class="grow outline-[0px]"
+    type="text"
+    [placeholder]="searchInputPlaceholder"
+    [(ngModel)]="searchInputValue"
+    (keydown.enter)="sendSearchInputValue()"
+    #searchInputRef
+  />
+
+  @if (showFiltersButton) {
+    <div class="border-l border-gray-200 pl-1">
+      <button matIconButton>
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </div>
+  }
+</div>
